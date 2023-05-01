@@ -1,13 +1,13 @@
 //
-//  MainViewController.swift
-//  EmptyProject
+//  WeatherViewController.swift
+//  Clima
 //
-//  Created by Andrey on 25.04.2023.
+//  Created by Andrey on 01.05.2023.
 //
 
 import UIKit
 
-class StartViewController: CustomViewController<StartView> {
+class WeatherViewController: CustomViewController<WeatherView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()

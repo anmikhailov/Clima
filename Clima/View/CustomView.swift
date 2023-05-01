@@ -1,8 +1,8 @@
 //
-//  View.swift
-//  CrocodileGame
+//  CustomView.swift
+//  Clima
 //
-//  Created by Mikhail Tedeev on 18.04.2023.
+//  Created by Andrey on 01.05.2023.
 //
 
 import UIKit

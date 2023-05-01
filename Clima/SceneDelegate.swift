@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  EmptyProject
+//  Clima
 //
-//  Created by Andrey on 25.04.2023.
+//  Created by Andrey on 01.05.2023.
 //
 
 import UIKit
@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let mainVC = StartViewController()
+        let mainVC = WeatherViewController()
         window?.rootViewController = mainVC
         window?.overrideUserInterfaceStyle = .light
         window?.makeKeyAndVisible()

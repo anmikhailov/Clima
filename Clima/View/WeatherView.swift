@@ -1,17 +1,17 @@
 //
-//  MainView.swift
-//  EmptyProject
+//  WeatherView.swift
+//  Clima
 //
-//  Created by Andrey on 25.04.2023.
+//  Created by Andrey on 01.05.2023.
 //
 
 import UIKit
 
-protocol StartViewDelegate: AnyObject {
+protocol WeatherViewDelegate: AnyObject {
 //    func RightView(_ view: RightView, didTapButton button: UIButton)
 }
 
-class StartView: CustomView {
+class WeatherView: CustomView {
 //    weak var delegate: MainViewDelegate?
     
     override func setViews() {
@@ -28,7 +28,7 @@ class StartView: CustomView {
 }
 
 //MARK: - Actions
-//private extension MainView {
+//private extension WeatherView {
 //    @objc func didTapButton(_ button: UIButton) {
 //        delegate?.RightView(self, didTapButton: button)
 //    }
