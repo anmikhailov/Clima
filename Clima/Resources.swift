@@ -11,9 +11,11 @@ import UIKit
 enum Resources {
     enum Images {
         static var backgroundLight = UIImage(named: "light_background")
+        static var locationIcon = UIImage(systemName: "location.circle.fill")
+        static var searchIcon = UIImage(systemName: "magnifyingglass")
+        static var sunnyIcon = UIImage(systemName: "sun.max")
     }
     enum Colors {
-        static var mainScreenColor = UIColor(red: 226/255, green: 251/255, blue: 243/255, alpha: 1)
-        static var textFieldColor = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1)
+        static var textFieldColor = UIColor.systemFill
     }
 }
