@@ -9,16 +9,8 @@ import UIKit
 
 class StartViewController: CustomViewController<StartView> {
     
-    override func loadView() {
-        super.loadView()
-        
-        print("loadView")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("viewDidLoad")
         
 //        customView.delegate = self
     }
