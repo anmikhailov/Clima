@@ -14,16 +14,29 @@ protocol WeatherViewDelegate: AnyObject {
 class WeatherView: CustomView {
 //    weak var delegate: MainViewDelegate?
     
+    private lazy var backgroundLight: UIImageView = {
+        let element = UIImageView()
+        element.image = Resources.Images.backgroundLight
+        element.contentMode = .scaleAspectFill
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+    
     override func setViews() {
         super.setViews()
         
-        // Add subviews
+        self.addSubview(backgroundLight)
     }
     
     override func layoutViews() {
         super.layoutViews()
         
-        // Add constraints
+        NSLayoutConstraint.activate([
+            backgroundLight.topAnchor.constraint(equalTo: self.topAnchor),
+            backgroundLight.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            backgroundLight.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            backgroundLight.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+        ])
     }
 }
 

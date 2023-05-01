@@ -15,6 +15,7 @@
 		8479B53B2A002B4400D83F62 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8479B5392A002B4400D83F62 /* WeatherViewController.swift */; };
 		8479B53E2A002B5400D83F62 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8479B53C2A002B5400D83F62 /* CustomView.swift */; };
 		8479B53F2A002B5400D83F62 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8479B53D2A002B5400D83F62 /* WeatherView.swift */; };
+		8479B5422A0036E400D83F62 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8479B5412A0036E400D83F62 /* Resources.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8479B5392A002B4400D83F62 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		8479B53C2A002B5400D83F62 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		8479B53D2A002B5400D83F62 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		8479B5412A0036E400D83F62 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				8479B5322A002AA200D83F62 /* Model */,
 				8479B51E2A0029BC00D83F62 /* AppDelegate.swift */,
 				8479B5202A0029BC00D83F62 /* SceneDelegate.swift */,
+				8479B5412A0036E400D83F62 /* Resources.swift */,
 				8479B5272A0029BD00D83F62 /* Assets.xcassets */,
 				8479B5292A0029BD00D83F62 /* LaunchScreen.storyboard */,
 				8479B52C2A0029BD00D83F62 /* Info.plist */,
@@ -169,6 +172,7 @@
 			files = (
 				8479B53E2A002B5400D83F62 /* CustomView.swift in Sources */,
 				8479B53A2A002B4400D83F62 /* CustomViewController.swift in Sources */,
+				8479B5422A0036E400D83F62 /* Resources.swift in Sources */,
 				8479B53B2A002B4400D83F62 /* WeatherViewController.swift in Sources */,
 				8479B53F2A002B5400D83F62 /* WeatherView.swift in Sources */,
 				8479B51F2A0029BC00D83F62 /* AppDelegate.swift in Sources */,
