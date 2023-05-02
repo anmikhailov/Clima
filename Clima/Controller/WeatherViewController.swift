@@ -9,6 +9,8 @@ import UIKit
 
 class WeatherViewController: CustomViewController<WeatherView>, UITextFieldDelegate {
     
+    var weatherManager = WeatherManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +24,10 @@ class WeatherViewController: CustomViewController<WeatherView>, UITextFieldDeleg
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(customView.cityTextField.text)
+        if let city = customView.cityTextField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
+        
         customView.cityTextField.text = ""
     }
     
