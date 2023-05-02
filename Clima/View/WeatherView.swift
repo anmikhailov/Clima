@@ -99,7 +99,7 @@ class WeatherView: CustomView {
     
     private lazy var conditionImageView: UIImageView = {
         let element = UIImageView()
-        element.image = Resources.Images.sunnyIcon
+        element.image = Resources.Images.clearSkyIcon
         element.tintColor = Resources.Colors.weatherColor
         element.contentMode = .scaleAspectFill
         element.translatesAutoresizingMaskIntoConstraints = false

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherViewController: CustomViewController<WeatherView>, UITextFieldDelegate {
+class WeatherViewController: CustomViewController<WeatherView>, UITextFieldDelegate, WeatherManagerDelegate {
     
     var weatherManager = WeatherManager()
     
@@ -16,8 +16,10 @@ class WeatherViewController: CustomViewController<WeatherView>, UITextFieldDeleg
         
         customView.delegate = self
         customView.cityTextField.delegate = self
+        weatherManager.delegate = self
     }
     
+    //MARK: - TextFieldDelegate methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         endEditing()
         return true
@@ -42,6 +44,11 @@ class WeatherViewController: CustomViewController<WeatherView>, UITextFieldDeleg
     
     func endEditing() {
         customView.cityTextField.endEditing(true)
+    }
+    
+    //MARK: - WeatherManagerDelegate methods
+    func didUpdateWeather(_ weather: WeatherModel) {
+        print(weather.temperatureString)
     }
     
 }
