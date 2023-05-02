@@ -10,12 +10,14 @@ import UIKit
 
 enum Resources {
     enum Images {
-        static var backgroundLight = UIImage(named: "light_background")
+        static var background = UIImage(named: "background")
         static var locationIcon = UIImage(systemName: "location.circle.fill")
         static var searchIcon = UIImage(systemName: "magnifyingglass")
         static var sunnyIcon = UIImage(systemName: "sun.max")
     }
     enum Colors {
         static var textFieldColor = UIColor.systemFill
+        static var weatherColor = UIColor(named: "WeatherColor")
+        
     }
 }

@@ -16,7 +16,7 @@ class WeatherView: CustomView {
     
     private lazy var backgroundLight: UIImageView = {
         let element = UIImageView()
-        element.image = Resources.Images.backgroundLight
+        element.image = Resources.Images.background
         element.contentMode = .scaleAspectFill
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -80,7 +80,7 @@ class WeatherView: CustomView {
     private lazy var conditionImageView: UIImageView = {
         let element = UIImageView()
         element.image = Resources.Images.sunnyIcon
-        element.tintColor = .label
+        element.tintColor = Resources.Colors.weatherColor
         element.contentMode = .scaleAspectFill
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
