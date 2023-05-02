@@ -68,6 +68,7 @@ class WeatherView: CustomView {
         ])
         element.rightView = paddingView
         element.rightViewMode = .always
+        element.font = UIFont.systemFont(ofSize: 25)
         element.textAlignment = .right
         
         element.autocapitalizationType = .words
