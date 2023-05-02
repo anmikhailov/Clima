@@ -20,10 +20,28 @@ class WeatherView: CustomView {
     
     var conditionImage: UIImage? {
         get {
-            conditionImageView.image
+            return conditionImageView.image
         }
         set {
             conditionImageView.image = newValue
+        }
+    }
+    
+    var cityLabelText: String? {
+        get {
+            return cityLabel.text
+        }
+        set {
+            cityLabel.text = newValue
+        }
+    }
+    
+    var temperatureLabelText: String? {
+        get {
+            return temperatureValueLabel.text
+        }
+        set {
+            temperatureValueLabel.text = newValue
         }
     }
     
