@@ -18,6 +18,15 @@ class WeatherView: CustomView {
         return cityNameTextField
     }
     
+    var conditionImage: UIImage? {
+        get {
+            conditionImageView.image
+        }
+        set {
+            conditionImageView.image = newValue
+        }
+    }
+    
     private lazy var backgroundLight: UIImageView = {
         let element = UIImageView()
         element.image = Resources.Images.background
