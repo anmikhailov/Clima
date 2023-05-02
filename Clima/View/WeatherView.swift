@@ -8,11 +8,15 @@
 import UIKit
 
 protocol WeatherViewDelegate: AnyObject {
-//    func RightView(_ view: RightView, didTapButton button: UIButton)
+    func WeatherView(_ view: WeatherView, didTapSearchButton button: UIButton)
 }
 
 class WeatherView: CustomView {
-//    weak var delegate: MainViewDelegate?
+    weak var delegate: WeatherViewDelegate?
+    
+    var cityTextField: UITextField {
+        return cityNameTextField
+    }
     
     private lazy var backgroundLight: UIImageView = {
         let element = UIImageView()
@@ -79,7 +83,7 @@ class WeatherView: CustomView {
         element.setBackgroundImage(Resources.Images.searchIcon, for: .normal)
         element.tintColor = .label
         element.translatesAutoresizingMaskIntoConstraints = false
-//        element.addTarget(<#T##target: Any?##Any?#>, action: #selector(<#selector#>), for: <#T##UIControl.Event#>)
+        element.addTarget(self, action: #selector(didTapSearchButton), for: .touchUpInside)
         return element
     }()
     
@@ -178,8 +182,8 @@ class WeatherView: CustomView {
 }
 
 //MARK: - Actions
-//private extension WeatherView {
-//    @objc func didTapButton(_ button: UIButton) {
-//        delegate?.RightView(self, didTapButton: button)
-//    }
-//}
+private extension WeatherView {
+    @objc func didTapSearchButton(_ button: UIButton) {
+        delegate?.WeatherView(self, didTapSearchButton: button)
+    }
+}
