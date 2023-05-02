@@ -191,7 +191,7 @@ class WeatherView: CustomView {
             mainVStack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             mainVStack.heightAnchor.constraint(equalToConstant: 350),
             mainVStack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 15),
-            mainVStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -15),
+            mainVStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
             
             chooseCityHStack.leadingAnchor.constraint(equalTo: mainVStack.leadingAnchor),
             chooseCityHStack.trailingAnchor.constraint(equalTo: mainVStack.trailingAnchor),
