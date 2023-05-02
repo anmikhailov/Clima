@@ -54,15 +54,21 @@ class WeatherView: CustomView {
     private lazy var cityNameTextField: UITextField = {
         let element = UITextField()
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: element.frame.height))
         
         element.backgroundColor = Resources.Colors.textFieldColor
-        element.placeholder = "Search"
+        
         element.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25),
             NSAttributedString.Key.paragraphStyle: paragraphStyle
         ])
-        element.textAlignment = .center
+        element.rightView = paddingView
+        element.rightViewMode = .always
+        element.textAlignment = .right
+        
+        element.autocapitalizationType = .words
+        element.returnKeyType = .go
+        
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
