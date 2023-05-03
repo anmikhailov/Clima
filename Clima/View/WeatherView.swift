@@ -9,6 +9,7 @@ import UIKit
 
 protocol WeatherViewDelegate: AnyObject {
     func WeatherView(_ view: WeatherView, didTapSearchButton button: UIButton)
+    func WeatherView(_ view: WeatherView, didTapLocationButton button: UIButton)
 }
 
 class WeatherView: CustomView {
@@ -78,7 +79,7 @@ class WeatherView: CustomView {
         element.setBackgroundImage(Resources.Images.locationIcon, for: .normal)
         element.tintColor = .label
         element.translatesAutoresizingMaskIntoConstraints = false
-//        element.addTarget(<#T##target: Any?##Any?#>, action: #selector(<#selector#>), for: <#T##UIControl.Event#>)
+        element.addTarget(self, action: #selector(didTapLocationButton(_:)), for: .touchUpInside)
         return element
     }()
     
@@ -111,7 +112,7 @@ class WeatherView: CustomView {
         element.setBackgroundImage(Resources.Images.searchIcon, for: .normal)
         element.tintColor = .label
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.addTarget(self, action: #selector(didTapSearchButton), for: .touchUpInside)
+        element.addTarget(self, action: #selector(didTapSearchButton(_:)), for: .touchUpInside)
         return element
     }()
     
@@ -153,7 +154,7 @@ class WeatherView: CustomView {
     
     private lazy var cityLabel: UILabel = {
         let element = UILabel()
-        element.text = "Kazan"
+        element.text = ""
         element.font = UIFont.systemFont(ofSize: 30)
         element.textColor = .label
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -213,5 +214,9 @@ class WeatherView: CustomView {
 private extension WeatherView {
     @objc func didTapSearchButton(_ button: UIButton) {
         delegate?.WeatherView(self, didTapSearchButton: button)
+    }
+    
+    @objc func didTapLocationButton(_ button: UIButton) {
+        delegate?.WeatherView(self, didTapLocationButton: button)
     }
 }
