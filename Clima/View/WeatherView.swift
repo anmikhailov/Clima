@@ -8,11 +8,42 @@
 import UIKit
 
 protocol WeatherViewDelegate: AnyObject {
-//    func RightView(_ view: RightView, didTapButton button: UIButton)
+    func WeatherView(_ view: WeatherView, didTapSearchButton button: UIButton)
 }
 
 class WeatherView: CustomView {
-//    weak var delegate: MainViewDelegate?
+    weak var delegate: WeatherViewDelegate?
+    
+    var cityTextField: UITextField {
+        return cityNameTextField
+    }
+    
+    var conditionImage: UIImage? {
+        get {
+            return conditionImageView.image
+        }
+        set {
+            conditionImageView.image = newValue
+        }
+    }
+    
+    var cityLabelText: String? {
+        get {
+            return cityLabel.text
+        }
+        set {
+            cityLabel.text = newValue
+        }
+    }
+    
+    var temperatureLabelText: String? {
+        get {
+            return temperatureValueLabel.text
+        }
+        set {
+            temperatureValueLabel.text = newValue
+        }
+    }
     
     private lazy var backgroundLight: UIImageView = {
         let element = UIImageView()
@@ -64,6 +95,7 @@ class WeatherView: CustomView {
         ])
         element.rightView = paddingView
         element.rightViewMode = .always
+        element.font = UIFont.systemFont(ofSize: 25)
         element.textAlignment = .right
         
         element.autocapitalizationType = .words
@@ -79,13 +111,13 @@ class WeatherView: CustomView {
         element.setBackgroundImage(Resources.Images.searchIcon, for: .normal)
         element.tintColor = .label
         element.translatesAutoresizingMaskIntoConstraints = false
-//        element.addTarget(<#T##target: Any?##Any?#>, action: #selector(<#selector#>), for: <#T##UIControl.Event#>)
+        element.addTarget(self, action: #selector(didTapSearchButton), for: .touchUpInside)
         return element
     }()
     
     private lazy var conditionImageView: UIImageView = {
         let element = UIImageView()
-        element.image = Resources.Images.sunnyIcon
+        element.image = Resources.Images.clearSkyIcon
         element.tintColor = Resources.Colors.weatherColor
         element.contentMode = .scaleAspectFill
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -159,7 +191,7 @@ class WeatherView: CustomView {
             mainVStack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             mainVStack.heightAnchor.constraint(equalToConstant: 350),
             mainVStack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 15),
-            mainVStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -15),
+            mainVStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -30),
             
             chooseCityHStack.leadingAnchor.constraint(equalTo: mainVStack.leadingAnchor),
             chooseCityHStack.trailingAnchor.constraint(equalTo: mainVStack.trailingAnchor),
@@ -178,8 +210,8 @@ class WeatherView: CustomView {
 }
 
 //MARK: - Actions
-//private extension WeatherView {
-//    @objc func didTapButton(_ button: UIButton) {
-//        delegate?.RightView(self, didTapButton: button)
-//    }
-//}
+private extension WeatherView {
+    @objc func didTapSearchButton(_ button: UIButton) {
+        delegate?.WeatherView(self, didTapSearchButton: button)
+    }
+}
