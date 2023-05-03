@@ -31,6 +31,10 @@ extension WeatherViewController: WeatherViewDelegate {
     func WeatherView(_ view: WeatherView, didTapSearchButton button: UIButton) {
         endEditing()
     }
+    
+    func WeatherView(_ view: WeatherView, didTapLocationButton button: UIButton) {
+        locationManager.requestLocation()
+    }
 }
 
 //MARK: - TextFieldDelegate
@@ -81,6 +85,7 @@ extension WeatherViewController: WeatherManagerDelegate {
 extension WeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
+            locationManager.stopUpdatingLocation()
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
             weatherManager.fetchWeather(latitude: lat, longitude: lon)
