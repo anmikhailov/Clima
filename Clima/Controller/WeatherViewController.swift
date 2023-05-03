@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherViewController: CustomViewController<WeatherView>, UITextFieldDelegate, WeatherManagerDelegate {
+class WeatherViewController: CustomViewController<WeatherView> {
     
     var weatherManager = WeatherManager()
     
@@ -18,8 +18,17 @@ class WeatherViewController: CustomViewController<WeatherView>, UITextFieldDeleg
         customView.cityTextField.delegate = self
         weatherManager.delegate = self
     }
-    
-    //MARK: - TextFieldDelegate methods
+}
+
+//MARK: - WeatherViewDelegate
+extension WeatherViewController: WeatherViewDelegate {
+    func WeatherView(_ view: WeatherView, didTapSearchButton button: UIButton) {
+        endEditing()
+    }
+}
+
+//MARK: - TextFieldDelegate
+extension WeatherViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         endEditing()
         return true
@@ -45,25 +54,19 @@ class WeatherViewController: CustomViewController<WeatherView>, UITextFieldDeleg
     func endEditing() {
         customView.cityTextField.endEditing(true)
     }
-    
-    //MARK: - WeatherManagerDelegate methods
+}
+
+//MARK: - WeatherManagerDelegate
+extension WeatherViewController: WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         DispatchQueue.main.async {
             self.customView.conditionImage = weather.conditionImage
             self.customView.temperatureLabelText = weather.temperatureString
             self.customView.cityLabelText = weather.cityName
-            
         }
     }
     
     func didFailError(_ weatherManager: WeatherManager, error: Error) {
         print(error)
-    }
-    
-}
-
-extension WeatherViewController: WeatherViewDelegate {
-    func WeatherView(_ view: WeatherView, didTapSearchButton button: UIButton) {
-        endEditing()
     }
 }
