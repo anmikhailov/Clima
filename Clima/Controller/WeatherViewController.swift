@@ -47,13 +47,17 @@ class WeatherViewController: CustomViewController<WeatherView>, UITextFieldDeleg
     }
     
     //MARK: - WeatherManagerDelegate methods
-    func didUpdateWeather(_ weather: WeatherModel) {
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         DispatchQueue.main.async {
             self.customView.conditionImage = weather.conditionImage
             self.customView.temperatureLabelText = weather.temperatureString
             self.customView.cityLabelText = weather.cityName
             
         }
+    }
+    
+    func didFailError(_ weatherManager: WeatherManager, error: Error) {
+        print(error)
     }
     
 }
